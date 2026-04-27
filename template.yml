@@ -3,7 +3,7 @@
   Type: aws::ec2::instance
   Properties:
    Instancetype: t3.micro
-   Imageid: ami-098e39bafa7e7303d
+   Imageid: ami-0ec10929233384c7f
    Keyname: WebServer
    SecurityGroups:
     - !Ref MySG
