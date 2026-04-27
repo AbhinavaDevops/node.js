@@ -1,0 +1,20 @@
+# Create EC2 instance and security group to allow HTTP traffic 
+ MyEc2:
+  Type: aws::ec2::instance
+  Properties:
+   Instancetype: t3.micro
+   Imageid: ami-098e39bafa7e7303d
+   Keyname: WebServer
+   SecurityGroups:
+    - !Ref MySG
+
+  MySG:
+   Type: AWS::EC2::SecurityGroup
+   properties:
+    GroupDescription: Allow HTTP
+    SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0 
+
